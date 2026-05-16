@@ -1,12 +1,68 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
+    <title>Dashboard de Gastos Personales</title>
+
+    <link
+      rel="stylesheet"
+      href="./styles.css"
     />
-    <title>Document</title>
   </head>
-  <body></body>
+
+  <body>
+    <header>
+      <h1>Dashboard de Gastos Personales</h1>
+    </header>
+
+    <section id="resumen">
+      <h2>Resumen General</h2>
+
+      <p>Total gastado:</p>
+      <span id="total-gastos">--</span>
+
+      <p>Número de gastos:</p>
+      <span id="cantidad-gastos">--</span>
+    </section>
+
+    <section id="filtros">
+      <h2>Filtros</h2>
+
+      <label>Mes:</label>
+      <select id="filtro-mes">
+        <option value="">Todos</option>
+      </select>
+
+      <label>Categoría:</label>
+      <select id="filtro-categoria">
+        <option value="">Todas</option>
+      </select>
+    </section>
+
+    <section id="grafico">
+      <h2>Gastos por categoría</h2>
+      <canvas id="graficoCategorias"></canvas>
+    </section>
+
+    <section id="tabla-gastos">
+      <h2>Detalle de Gastos</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Categoría</th>
+            <th>Descripción</th>
+            <th>Monto</th>
+          </tr>
+        </thead>
+
+        <tbody id="cuerpo-tabla"></tbody>
+      </table>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="./main.js"></script>
+  </body>
 </html>
